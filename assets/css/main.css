@@ -1,0 +1,856 @@
+/* main.css - Global styles for Altradits Theme
+   - Contains layout, typography, navigation, footer, and component styles
+   - Use only valid CSS, no HTML or PHP code in this file
+   - Use CSS variables for brand colors and spacing
+*/
+
+:root {
+    --primary-color: #2563eb;
+    --secondary-color: #1d4ed8;
+    --accent-color: #6e8efb;
+    --brand-purple: #a777e3;
+    --brand-green: #10b981;
+    --brand-gray: #f8f9fa;
+    --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
+
+/* ================= HEADER STYLES ================= */
+.site-header {
+    background: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.site-header.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+}
+
+/* Site Branding */
+.site-branding {
+    display: flex;
+    align-items: center;
+}
+
+.custom-logo {
+    max-height: 50px;
+    width: auto;
+}
+
+.site-title-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.site-title a {
+    text-decoration: none;
+    color: #2563eb;
+    transition: color 0.3s ease;
+}
+
+.site-title a:hover {
+    color: #1d4ed8;
+}
+
+.site-description {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #6b7280;
+    font-weight: 400;
+}
+
+/* ================= END HEADER STYLES ================= */
+
+/* ================= MAIN NAVIGATION ================= */
+.main-navigation {
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+.nav-menu li {
+    position: relative;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #374151;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.nav-link:hover {
+    color: #2563eb;
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #2563eb;
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+.dropdown-arrow {
+    font-size: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.nav-menu li:hover .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+/* Submenu Styles */
+.nav-menu .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    padding: 1rem 0;
+    min-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.nav-menu li:hover .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.nav-menu .sub-menu li {
+    margin: 0;
+}
+
+.nav-menu .sub-menu .nav-link {
+    padding: 0.75rem 1.5rem;
+    white-space: nowrap;
+    display: block;
+}
+
+.nav-menu .sub-menu .nav-link::after {
+    display: none;
+}
+
+/* ================= END MAIN NAVIGATION ================= */
+
+/* ================= MAIN CONTENT AREA ================= */
+.site-main {
+    padding: 2rem;
+    min-height: 60vh; /* Gives the main content area some height */
+}
+
+/* ================= END MAIN CONTENT AREA ================= */
+
+/* ================= FOOTER STYLES ================= */
+.site-footer {
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid #eee;
+    margin-top: 2rem;
+}
+/* HOMEPAGE STYLES */
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.hero-content {
+    flex: 1;
+}
+.hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #666;
+}
+.hero-visual {
+    flex: 1;
+}
+
+/* Button Styles */
+.button {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #f4f4f4;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-right: 1rem;
+    border: none;
+    cursor: pointer;
+}
+.button-primary {
+    background-color: #0073aa; /* WordPress blue example */
+    color: white;
+}
+.button-secondary {
+    background-color: transparent;
+    border: 2px solid #0073aa;
+    color: #0073aa;
+}
+.button-large {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+}
+
+/* Services Overview */
+.services-overview {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+.services-overview h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+.services-overview > p {
+    margin-bottom: 3rem;
+}
+.service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.service-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+.service-card h3 {
+    color: #0073aa;
+    margin-bottom: 1rem;
+}
+.service-card ul {
+    list-style: none;
+    text-align: left;
+    margin: 1.5rem 0;
+}
+.service-card li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+.service-card li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #0073aa;
+    font-weight: bold;
+}
+
+/* CTA Section */
+.cta {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+.cta h2 {
+    margin-bottom: 1rem;
+}
+
+/* ================= END HOMEPAGE STYLES ================= */
+
+/* ================= SERVICES PAGE STYLES ================= */
+/* Features */
+.features {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+.feature {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: left;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* Pricing Calculator */
+.pricing {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+.pricing-calculator {
+    max-width: 800px;
+    margin: 3rem auto;
+    border: 1px solid #eee;
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: left;
+}
+.calc-group {
+    margin-bottom: 2rem;
+}
+.calc-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.option-button {
+    padding: 0.8rem 1.2rem;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+.option-button:hover, .option-button input:checked + label { /* This needs a JS fix, see below */
+    border-color: #0073aa;
+    background-color: #e0f0f7;
+}
+.option-button input[type="radio"] {
+    margin-right: 0.5rem;
+}
+.price-display {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+    margin-top: 2rem;
+}
+.total-price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #0073aa;
+    margin: 1rem 0;
+}
+
+/* Testimonials */
+.testimonials {
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+.testimonial-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.testimonial {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    font-style: italic;
+}
+.testimonial cite {
+    display: block;
+    margin-top: 1rem;
+    font-style: normal;
+    font-weight: bold;
+    color: #0073aa;
+}
+
+/* Final CTA */
+.final-cta {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+/* ================= END SERVICES PAGE STYLES ================= */
+
+/* ================= DIFY PAGE STYLES ================= */
+/* Hero */
+.dify-hero {
+    background: linear-gradient(to right, #0073aa, #004c6d); /* Professional blue gradient */
+    color: white;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+.dify-hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+}
+.hero-subtitle {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+}
+
+/* How It Works */
+.how-it-works {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+.process-steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+.step {
+    padding: 2rem;
+}
+.step-number {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background-color: #0073aa;
+    color: white;
+    border-radius: 50%;
+    line-height: 50px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 1rem auto;
+}
+
+/* ================= END DIFY PAGE STYLES ================= */
+
+/* ================= DIY PAGE STYLES ================= */
+/* Hero */
+.diy-hero {
+    background: linear-gradient(to right, #2a9d8f, #1d7874); /* A different, fresh gradient */
+    color: white;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+.diy-hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Pricing Packages */
+.pricing-packages {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+.package-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 3rem auto;
+}
+.package-card {
+    background: white;
+    padding: 2.5rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    text-align: center;
+}
+.package-card.popular {
+    border: 2px solid #2a9d8f;
+    transform: scale(1.05); /* Makes the popular card stand out */
+}
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #2a9d8f;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+.package-price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2a9d8f;
+    margin: 1rem 0;
+}
+.package-card ul {
+    list-style: none;
+    text-align: left;
+    margin: 1.5rem 0;
+}
+.package-card li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+.package-card li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #2a9d8f;
+    font-weight: bold;
+}
+
+/* ================= END DIY PAGE STYLES ================= */
+
+/* ================= DIWY PAGE STYLES ================= */
+/* Hero */
+.diwy-hero {
+    background: linear-gradient(to right, #6D28D9, #4C1D95); /* Professional purple gradient */
+    color: white;
+    padding: 5rem 2rem;
+    text-align: center;
+}
+.diwy-hero-content h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Pricing Packages for DIWY (overriding DIY styles slightly) */
+.diwy-hero .button-primary {
+    background-color: #7C3AED; /* Lighter purple for buttons */
+}
+.pricing-packages .package-card.popular {
+    border-color: #6D28D9; /* Using the purple theme */
+}
+.pricing-packages .popular-badge {
+    background-color: #6D28D9; /* Using the purple theme */
+}
+.pricing-packages .package-price {
+    color: #6D28D9; /* Using the purple theme */
+}
+.pricing-packages .package-card li:before {
+    color: #6D28D9; /* Using the purple theme */
+}
+/* ================= END DIWY PAGE STYLES ================= */
+
+/* ================= CHECKOUT PAGE STYLES ================= */
+/* Checkout Page Styles */
+.checkout-page {
+    padding: 2rem 0;
+}
+
+.checkout-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.order-summary, .checkout-form {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.order-totals {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 2px solid #eee;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.grand-total {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #2563eb;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.submit-payment-btn {
+    width: 100%;
+    padding: 1rem;
+    background: #2563eb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.submit-payment-btn:hover {
+    background: #1d4ed8;
+}
+
+.submit-payment-btn:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+/* ================= END CHECKOUT PAGE STYLES ================= */
+
+/* ================= THANK YOU PAGE STYLES ================= */
+/* Thank You Page Styles */
+.thank-you-page {
+    padding: 3rem 0;
+    text-align: center;
+}
+
+.thank-you-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: #10b981;
+    margin-bottom: 2rem;
+}
+
+.confirmation-message {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+}
+
+.process-steps {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    background: #2563eb;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+.support-info {
+    background: #f8f9fa;
+    padding: 2rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+}
+
+/* ================= END THANK YOU PAGE STYLES ================= */
+
+/* ================= FOOTER COMPONENTS & SOCIAL LINKS ================= */
+/* Footer Styles */
+.site-footer {
+    background: #1f2937;
+    color: white;
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #d1d5db;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #374151;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #2563eb;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid #374151;
+    color: #9ca3af;
+}
+/* Social Media Colors */
+.fa-linkedin { color: #0077b5; }
+.fa-x-twitter { color: #000000; }
+.fa-instagram { 
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.fa-facebook { color: #1877f2; }
+
+/* Social links mini */
+.social-links-mini {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.social-links-mini a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f3f4f6;
+    transition: transform 0.3s ease;
+}
+
+.social-links-mini a:hover {
+    transform: scale(1.1);
+}
+
+/* ================= END FOOTER COMPONENTS & SOCIAL LINKS ================= */
+
+/* ================= CONTACT METHODS GRID ================= */
+.contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-method {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.contact-method i {
+    font-size: 2rem;
+    color: #2563eb;
+    margin-bottom: 1rem;
+}
+
+.contact-method h3 {
+    margin: 0 0 0.5rem 0;
+    color: #333;
+}
+
+.contact-method p {
+    margin: 0;
+    color: #666;
+}
+/* ================= END CONTACT METHODS GRID ================= */
