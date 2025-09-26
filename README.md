@@ -3,6 +3,8 @@
 This README acts as a comprehensive prompt for generating a fully functional, modern WordPress website for investment coaches’ social media management. It covers structure, design, CSS organization, and PHP functionality, so a developer or AI can use it to scaffold a new, working site.
 
 ---
+DEMO WEBSITE: www.altradits.com
+---
 
 ## 1. Website Functionality Overview
 
